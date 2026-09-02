@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediksi Keparahan Pneumonia</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+  </head>
+  <body data-scroll="{{ 'true' if scroll else 'false' }}">
+    <div class="navbar">
+      <h3>PneumoCare <span>AI</span></h3>
+      <div class="nav-links">
+        <a href="#landing"> Home </a>
+        <a href="#about"> About </a>
+      </div>
+    </div>
+  <section id="landing">
+    <div class="landing-container">
+      <div class="landing-content">
+        <span class="hero-badge">
+          Sistem Pendukung Keputusan Berbasis AI
+        </span>
+        <h1>Ubah Data <span>Klinis</span> </h1>
+        <h1>Menjadi Keputusan <span>Taktis</span></h1>
+        <p>
+          Sistem ini membantu memproses parameter data klinis untuk memberikan proyeksi awal tingkat keparahan pneumonia,
+           sebagai bahan pertimbangan tambahan dalam pengambilan keputusan.
+        </p>
+        
+        <div class="landing-action">
+          <button class="btn btn-primary btn-hero" onclick="goToForm()">
+            Mulai Prediksi
+          </button>
+          <a href="#about" class="btn-secondary-link">
+            Pelajari Selengkapnya
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section id="form-section">
+      <form action="/predict" method="post" class="form-card">
+        <h3>Input Parameter Klinis Pasien</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label> Kode Pasien</label>
+            <input type="text" name="kode_pasien" placeholder="Pneu01" required />
+          </div>
+
+          <div class="form-group">
+            <label> Umur Pasien </label>
+            <select name="agecat3" id="" required>
+              <option value=""disabled selected>PIlih Kategori Umur</option>
+              <option value="1">Kurang dari 64 Tahun</option>
+              <option value="2">65 - 74 Tahun</option>
+              <option value="3">Lebih dari 74 Tahun</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label> Jenis Kelamin </label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="sex" value="1" required /> Perempuan</label>
+              <label class="radio-item"><input type="radio" name="sex" value="2" /> Laki - Laki</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Riwayat Tuberkolosis </label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="tb" value="Yes" required/> Ya</label>
+              <label class="radio-item"><input type="radio" name="tb" value="0" /> Tidak</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Riwayat Penyakit Pernapasan </label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="crd" value="Yes" id="" required />Ya</label>
+              <label class="radio-item"><input type="radio" name="crd" value="0" id="" />Tidak</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Riwayat Diabetes </label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="diabetes" value="Yes" required/> Ya</label>
+              <label class="radio-item"><input type="radio" name="diabetes" value="0" id=""/> Tidak</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Riwayat Penyakit Kardiovaskular</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="cvd" value="1" id="" required/>Ya</label>
+              <label class="radio-item"><input type="radio" name="cvd" value="0" id="" />Tidak</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Tekanan Darah</label>
+            <select name="lowBP" id="" required>
+              <option value="" disabled selected> Pilih Kategori </option>
+              <option value="1">Rendah (Kurang dari 90/60 mmHg)</option>
+              <option value="0">Normal/Tinggi</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="">kebingungan</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="confusion" value="1" id="" required/> Ya
+              (Bingung/Gelisah)</label>
+              <label class="radio-item"><input type="radio" name="confusion" value="0" id="" /> Tidak</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Laju Pernapasan </label>
+            <select name="rr_cat" id="" required>
+              <option value="" disabled selected> Pilih Kategori </option>
+              <option value="1">Cepat (30/menit atau Lebih)</option>
+              <option value="0">Normal (Kurang dari 30/menit)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Kadar Urea </label>
+            <select name="bun_cat" id="" required>
+              <option value="" disabled selected> Pilih Kategori</option>
+              <option value="1">Tinggi (Lebih dari 19 mg/dl)</option>
+              <option value="0">Normal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Suhu </label>
+            <select name="temp102" id="" required>
+              <option value="" disabled selected> Pilih Kategori</option>
+              <option value="1">Demam Tinggi (Lebih dari 39°C / 102°F)</option>
+              <option value="0">Normal/Demam Ringan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Saturasi Oksigen </label>
+            <select name="oxy_sat_90" id="" required>
+              <option value="" disabled selected> Pilih Kategori </option>
+              <option value="0">Normal (94% atau Lebih)</option>
+              <option value="1">Rendah (90 - 93%)</option>
+              <option value="2">Sangat Rendah (Kurang dari 90%)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for=""> Jumlah Leukosit </label>
+            <select name="tlc_cat" id="" required>
+              <option value="" disabled selected> Pilih Kategori </option>
+              <option value="5-20K">Normal (5.000 - 20.000 /dl)</option>
+              <option value="<5k">Rendah (Kurang dari 5.000 /dl)</option>
+              <option value=">20K">Tinggi (Lebih dari 20.000 /dl)</option>
+            </select>
+          </div>
+          <div class="form-group"> 
+            <label>Status Anemia</label>
+            <select name="anemia" id="" required>
+              <option value="" disabled selected> Pilih Kategori</option>
+              <option value="1">Normal (Hb 12-13 g/dl atau Lebih)</option>
+              <option value="0">Anemia (Kurang dari 12 g/dl)</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">Prediksi</button>
+      </form>
+    </section>
+    <section id="result-section" data-show="{{ 'true' if prediction_text else 'false' }}">
+          <div class="result-card">
+            <h2>Hasil Analisis AI</h2>
+            {% if prediction_text %}
+            <p>Berdasarkan data yang diinput, tingkat risiko pasien adalah:</p>
+            <div class="badge 
+              {{ 'badge-high' if 'Parah' in prediction_text else 'badge-low' }}">
+              {{ prediction_text }}
+            </div>
+            <p style="font-size: 0.8em; margin-top: 15px; color: #777;">*Hasil ini adalah alat bantu, keputusan final ada pada tenaga medis.</p>
+            {% else %}
+            <p>Belum ada data untuk dianalisis.</p>
+            {% endif %}
+          </div>
+    </section>
+    <section id="about">
+      <div class="about-container">
+        <h2>Informasi Teknis & Klinis</h2>
+        
+        <div class="about-grid">
+          <div class="about-card">
+            <i class="fas fa-microchip"></i>
+            <h4>Metodologi AI</h4>
+            <p>Sistem ini dikembangkan menggunakan algoritma <strong>Extra Gradient Boosting</strong> yang menganalisis variabel klinis secara simultan untuk mendeteksi risiko pemburukan kondisi pasien lebih awal dan akurat.</p>
+          </div>
+
+          <div class="about-card">
+            <i class="fas fa-stethoscope"></i>
+            <h4>Panduan Interpretasi</h4>
+            <p>Hasil <strong>"Tinggi (ICU)"</strong> mengindikasikan bahwa pasien memenuhi kriteria kritis berdasarkan pola data. Tenaga medis disarankan melakukan observasi ketat pada hemodinamik pasien.</p>
+          </div>
+        </div>
+
+        <div class="disclaimer-box">
+          <div class="disclaimer-header">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>Penting: Medical Disclaimer</span>
+          </div>
+          <p>Sistem ini adalah Clinical Decision Support System (CDSS) yang membantu proses analisis. Keputusan medis akhir, diagnosa, dan tindakan sepenuhnya tetap menjadi tanggung jawab tenaga medis profesional.</p>
+        </div>
+      </div>
+    </section>
+    <script src="https://kit.fontawesome.com/your-fontawesome-key.js" crossorigin="anonymous"></script>
+  </body>
+</html>
