@@ -1,5 +1,5 @@
 # PneumoCare AI
-###Sistem Pendukung Keputusan Berbasis AI untuk Proyeksi Awal Tingkat Keparahan Pneumonia
+Sistem Pendukung Keputusan Berbasis AI untuk Proyeksi Awal Tingkat Keparahan Pneumonia
 PneumoCare AI merupakan **Clinical Decision Support System (CDSS)** berbasis **Artificial Intelegence** yang dikembangkan untuk membantu proses analisis parameter klinis pasien dalam memberikan **proyeksi awal tingkat keparahan pneumonia**.
 Sistem memanfaatkan data klinis pasien sebagai input dan menggunakan model **Extra Gradient Boosting** untuk menghasilkan prediksi tingkat keparahan yang dapat digunakan sebagai bahan pertimbangan tambahan dalam proses pengambilan keputusan oleh tenaga medis.
 
