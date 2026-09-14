@@ -51,3 +51,43 @@ Aplikasi menyediakan informasi mengenai:
 - Penjelasan model.
 - Panduan interpretasi hasil.
 - Informasi mengenai penggunaan sistem sebagai Clinical Decision Support System.
+### 5. Model Machine Learning
+PneumoCare AI menggunakan algoritma **Extra Gradient Boosting**. Model ini diguakan untuk melakukan proyeksi tingkat keparahan pneumonia berdasarkan parameter klinis yang dimasukkan ke dalam sistem.
+Secara umum, alur pemrosesan sistem adalah:
+
+```text
+Data Klinis Pasien
+        │
+        ▼
+Preprocessing Data
+        │
+        ▼
+Model Extra Gradient Boosting
+        │
+        ▼
+Proses Prediksi
+        │
+        ▼
+Tingkat Keparahan Pneumonia
+```
+### 6. Parameter Klinis
+
+Parameter klinis yang digunakan dalam sistem meliputi:
+
+| Parameter | Keterangan |
+|---|---|
+| Kode Pasien | Identitas/kode data pasien |
+| Umur Pasien | Kategori usia pasien |
+| Jenis Kelamin | Jenis kelamin pasien |
+| Riwayat Tuberkulosis | Riwayat TB pasien |
+| Riwayat Penyakit Pernapasan | Riwayat penyakit pernapasan |
+| Riwayat Diabetes | Riwayat diabetes |
+| Riwayat Kardiovaskular | Riwayat penyakit kardiovaskular |
+| Tekanan Darah | Kondisi tekanan darah pasien |
+| Kebingungan | Kondisi kebingungan pasien |
+| Laju Pernapasan | Frekuensi pernapasan |
+| Kadar Urea | Kadar urea pasien |
+| Suhu | Suhu tubuh pasien |
+| Saturasi Oksigen | Tingkat saturasi oksigen |
+| Jumlah Leukosit | Jumlah sel darah putih |
+| Status Anemia | Status anemia pasien |
