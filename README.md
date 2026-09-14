@@ -51,6 +51,22 @@ Aplikasi menyediakan informasi mengenai:
 - Penjelasan model.
 - Panduan interpretasi hasil.
 - Informasi mengenai penggunaan sistem sebagai Clinical Decision Support System.
+
+### 5. Medical Disclaimer
+
+> **PENTING:**
+
+PneumoCare AI adalah **Clinical Decision Support System (CDSS)** yang membantu proses analisis dan memberikan proyeksi awal berdasarkan data yang dimasukkan.
+
+Sistem ini **bukan alat diagnosis medis**.
+
+Hasil prediksi:
+
+- Tidak menggantikan diagnosis dokter.
+- Tidak menggantikan pemeriksaan medis.
+- Tidak boleh digunakan sebagai satu-satunya dasar pengambilan keputusan medis.
+- Harus dipertimbangkan bersama kondisi klinis pasien dan penilaian tenaga medis profesional.
+
 ### 5. Model Machine Learning
 PneumoCare AI menggunakan algoritma **Extra Gradient Boosting**. Model ini diguakan untuk melakukan proyeksi tingkat keparahan pneumonia berdasarkan parameter klinis yang dimasukkan ke dalam sistem.
 Secara umum, alur pemrosesan sistem adalah:
@@ -91,22 +107,6 @@ Parameter klinis yang digunakan dalam sistem meliputi:
 | Saturasi Oksigen | Tingkat saturasi oksigen |
 | Jumlah Leukosit | Jumlah sel darah putih |
 | Status Anemia | Status anemia pasien |
-
-### 7. Medical Disclaimer
-
-> **PENTING:**
-
-PneumoCare AI adalah **Clinical Decision Support System (CDSS)** yang membantu proses analisis dan memberikan proyeksi awal berdasarkan data yang dimasukkan.
-
-Sistem ini **bukan alat diagnosis medis**.
-
-Hasil prediksi:
-
-- Tidak menggantikan diagnosis dokter.
-- Tidak menggantikan pemeriksaan medis.
-- Tidak boleh digunakan sebagai satu-satunya dasar pengambilan keputusan medis.
-- Harus dipertimbangkan bersama kondisi klinis pasien dan penilaian tenaga medis profesional.
-
  ## Teknologi
  Project ini menggunakan beberapa teknologi berikut:
  - Python
