@@ -117,7 +117,7 @@ Parameter klinis yang digunakan dalam sistem meliputi:
  - CSS
  - JavaScript
 
-## 🎓 Academic Project
+##  Academic Project
 
 Project ini dikembangkan sebagai bagian dari:
 
@@ -143,7 +143,7 @@ Project ini dikembangkan sebagai bagian dari:
 
 ---
 
-## 👤 Author
+##  Author
 
 **[Yuni Eka Nuraini]**
 
@@ -151,7 +151,7 @@ GitHub: [@yyonee](https://github.com/yyonee)
 
 ---
 
-## 📄 License
+##  License
 
 Project ini dikembangkan untuk keperluan penelitian dan akademik.
 
