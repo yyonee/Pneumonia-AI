@@ -91,3 +91,68 @@ Parameter klinis yang digunakan dalam sistem meliputi:
 | Saturasi Oksigen | Tingkat saturasi oksigen |
 | Jumlah Leukosit | Jumlah sel darah putih |
 | Status Anemia | Status anemia pasien |
+
+### 7. Medical Disclaimer
+
+> **PENTING:**
+
+PneumoCare AI adalah **Clinical Decision Support System (CDSS)** yang membantu proses analisis dan memberikan proyeksi awal berdasarkan data yang dimasukkan.
+
+Sistem ini **bukan alat diagnosis medis**.
+
+Hasil prediksi:
+
+- Tidak menggantikan diagnosis dokter.
+- Tidak menggantikan pemeriksaan medis.
+- Tidak boleh digunakan sebagai satu-satunya dasar pengambilan keputusan medis.
+- Harus dipertimbangkan bersama kondisi klinis pasien dan penilaian tenaga medis profesional.
+
+ ## Teknologi
+ Project ini menggunakan beberapa teknologi berikut:
+ - Python
+ - Flask
+ - Machine Learning
+ - XGBoost
+ - HTML
+ - CSS
+ - JavaScript
+
+## 🎓 Academic Project
+
+Project ini dikembangkan sebagai bagian dari:
+
+**Penelitian/Skripsi**
+
+**Judul:**  
+`[Klasifikasi Tingkat Keparahan Pneumonia Mengunakan Algoritma XGBoost dengan Perbandingan Metrik Scoring pada GridSearch]`
+
+**Nama:**  
+`[Yuni Eka Nuraini]`
+
+**Program Studi:**  
+`[S1 Matematika]`
+
+**Fakultas:**  
+`[Fakultas Matematika dan Ilmu Pengetahuan Alam]`
+
+**Universitas:**  
+`[Universitas Negeri Malang]`
+
+**Tahun:**  
+`[2026]`
+
+---
+
+## 👤 Author
+
+**[Yuni Eka Nuraini]**
+
+GitHub: [@yyonee](https://github.com/yyonee)
+
+---
+
+## 📄 License
+
+Project ini dikembangkan untuk keperluan penelitian dan akademik.
+
+Lisensi penggunaan dapat disesuaikan dengan kebutuhan penelitian dan kebijakan institusi.
